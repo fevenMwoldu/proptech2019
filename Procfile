@@ -1,0 +1,1 @@
+web: gunicorn proptech.wsgi --log-file -
