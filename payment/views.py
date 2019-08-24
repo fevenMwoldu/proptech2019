@@ -21,4 +21,25 @@ class ValidationView(APIView):
         serializer = ValidationSerializer(data=validation)
         if serializer.is_valid(raise_exception=True):
             validation_saved = serializer.save()
-        return Response({"success": "Validation '{}' created successfully".format(validation_saved.data)})
+
+        return Response({"ResultDesc": 0})
+
+
+class ConfirmationView(APIView):
+    def get(self, request):
+        validations = Validation.objects.all()
+        serializer = ValidationSerializer(validations, many=True)
+        return Response({"validations": serializer.data})
+
+
+    def post(self, request):
+        print (request.data)
+
+        validation = request.data.get('validation')
+
+        # Create an article from the above data
+        serializer = ValidationSerializer(data=validation)
+        if serializer.is_valid(raise_exception=True):
+            validation_saved = serializer.save()
+
+        return Response({"ResultDesc": 0})

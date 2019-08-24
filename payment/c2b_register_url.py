@@ -1,10 +1,12 @@
 import requests
 
-validation_url = "https://darajambili.herokuapp.com/c2b/validation"
-confirmtion_url = "https://darajambili.herokuapp.com/c2b/confirmation"
+validation_url = "https://proptech2018.herokuapp.com/api/c2b/validation/" 
+#"https://darajambili.herokuapp.com/c2b/validation"
+confirmtion_url = "https://proptech2018.herokuapp.com/api/c2b/confirmation/" 
+#"https://darajambili.herokuapp.com/c2b/confirmation"
 
 
-access_token = "ovKz09czX0ivWjxlMfyHwwFgeMu4"
+access_token = "fAKtG7n3qBMreIgiWS2UBtddVbCu"
 
 api_url = "https://sandbox.safaricom.co.ke/mpesa/c2b/v1/registerurl"
 
