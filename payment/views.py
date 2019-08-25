@@ -25,8 +25,8 @@ class ConfirmationView(generics.CreateAPIView):
     #     return Response({"validations": serializer.data})
 
 
-    # def post(self, request):
-    #     print (request.data)
+    def post(self, request):
+        print (request.data)
 
     #     validation = request.data.get('validation')
 
@@ -35,4 +35,4 @@ class ConfirmationView(generics.CreateAPIView):
     #     if serializer.is_valid(raise_exception=True):
     #         validation_saved = serializer.save()
 
-    #     return Response({"ResultDesc": 0})
+        return Response({"ResultDesc": 0})
