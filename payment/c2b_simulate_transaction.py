@@ -1,6 +1,6 @@
 import requests
 
-access_token = "tAbaDj6NMx5GzA9GdyktK7YmsmAf"
+access_token = "5hGkG3ssYKiY1kiGRe4xFGRLrG7d"
 
 api_url = "https://sandbox.safaricom.co.ke/mpesa/c2b/v1/simulate"
 
