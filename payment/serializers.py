@@ -1,10 +1,10 @@
 from rest_framework import serializers
 from .models import C2BPayment
 
-class C2BPaymentSerializer(serializers.Serializer):
+class C2BPaymentSerializer(serializers.ModelSerializer):
     class Meta:
         model = C2BPayment
-        fields = ['TransactionType','TransID','TransTime','TransAmount','BusinessShortCode','BillRefNumber','InvoiceNumber','OrgAccountBalance','ThirdPartyTransID','MSISDN','FirstName','MiddleName','LastName']
+        fields = '__all__'
     # TransactionType = serializers.CharField(max_length=20, blank = False)
     # TransID = serializers.CharField(max_length=20, blank = False)
     # TransTime = serializers.DateTimeField(default=datetime.now())
