@@ -1,0 +1,23 @@
+# Get access token
+
+curl -X GET --header "Authorization: Basic U1hxQ1hKV3F5SWN3WUpDdWp2a3pPaTBYVWcyZ3ZjUm06QXMxcVRER0ltd1pxdGZENA==" "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials"
+
+# Register Validation and Confirmation URLs
+
+curl -X POST --header "Content-Type: application/json" --header "Authorization: Bearer IZNgBcOhC6NqyvTIQdQ1UmkOu6lq" -d "{
+>     \"ShortCode\": \"601397\" ,
+>     \"ResponseType\": \"Completed\",
+>     \"ConfirmationURL\": \"https://darajambili.herokuapp.com/c2b/confirmation\",
+>     \"ValidationURL\": \"https://darajambili.herokuapp.com/c2b/validation\"
+> }" "https://sandbox.safaricom.co.ke/mpesa/c2b/v1/registerurl"
+
+    
+# Simulate C2B payment
+
+curl -X POST --header "Content-Type: application/json" --header "Authorization: Bearer IZNgBcOhC6NqyvTIQdQ1UmkOu6lq" -d "{
+    \"ShortCode\": \"601397\",
+    \"CommandID\": \"CustomerPayBillOnline\",
+    \"Amount\": \"1\",
+    \"Msisdn\": \"254708374149\",
+    \"BillRefNumber\": \"12345\"
+}" "https://sandbox.safaricom.co.ke/mpesa/c2b/v1/simulate"
