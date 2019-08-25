@@ -30,11 +30,16 @@ class ConfirmationView(generics.CreateAPIView):
         
         serializer = C2BPaymentSerializer(data=request.data)
         
+        response = Response({"ResultDesc": 1})
         if serializer.is_valid():
             serializer.save()
-            return Response({"ResultDesc": 0})
+            response = Response({"ResultDesc": 0})
+        else:
+            print("is not valid")
 
-        return Response({"ResultDesc": 1})
+        print(response)
+
+        return response
     #     validation = request.data.get('validation')
 
     #     # Create an article from the above data
