@@ -26,8 +26,15 @@ class ConfirmationView(generics.CreateAPIView):
 
 
     def post(self, request):
-        print (request.data)
+        print (request.data)    
+        
+        serializer = C2BPaymentSerializer(data=request.data)
+        
+        if serializer.is_valid():
+            serializer.save()
+            return Response({"ResultDesc": 0})
 
+        return Response({"ResultDesc": 1})
     #     validation = request.data.get('validation')
 
     #     # Create an article from the above data
@@ -35,4 +42,4 @@ class ConfirmationView(generics.CreateAPIView):
     #     if serializer.is_valid(raise_exception=True):
     #         validation_saved = serializer.save()
 
-        return Response({"ResultDesc": 0})
+        
