@@ -49,5 +49,5 @@ class ConfirmationView(generics.CreateAPIView):
     #     if serializer.is_valid(raise_exception=True):
     #         validation_saved = serializer.save()
 
-    #     print("I wanna make love to my shikorey!")
+    
         
