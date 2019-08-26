@@ -91,24 +91,24 @@ REST_FRAMEWORK = {
 }
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'proppayment',
-#         'USER': 'feven',
-#     'PASSWORD':'123',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'proppayment',
+        'USER': 'feven',
+    'PASSWORD':'123',
+    }
+}
 
 
 
 #uncomment this if u want to run it on heroku
-DATABASES = {'default': dj_database_url.config(default=config('DATABASE_URL'))}
+# DATABASES = {'default': dj_database_url.config(default=config('DATABASE_URL'))}
 
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+# db_from_env = dj_database_url.config(conn_max_age=500)
+# DATABASES['default'].update(db_from_env)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+# ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
 
