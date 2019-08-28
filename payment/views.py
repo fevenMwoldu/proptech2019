@@ -12,6 +12,13 @@ class ValidationView(generics.CreateAPIView):
     serializer_class = C2BPaymentSerializer
     permission_classes = [AllowAny]
 
+    # check if invoice reference number is in DB
+    # check if invoice amount is correct
+    # check if invoice is already paid
+    # check if deadline is not met ???
+    # if any of these checks fail, then return 1 ... means don't accept payment
+    # else return 0 ... means accept payment
+    # 
     # return Response({"ResultDesc": 0})
 
 
@@ -33,6 +40,7 @@ class ConfirmationView(generics.CreateAPIView):
         serializer = C2BPaymentSerializer(data=request.data)
         
         response = Response({"ResultDesc": 1})
+        
         if serializer.is_valid():
             serializer.save()
             response = Response({"ResultDesc": 0})
