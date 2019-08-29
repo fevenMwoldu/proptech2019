@@ -9,7 +9,8 @@ headers = {"Authorization": "Bearer %s" % access_token}
 request = { "ShortCode":"601397",
 "CommandID":"CustomerPayBillOnline",
 "Amount":"10",
-"Msisdn":"254708374149",
+"Msisdn":"254715385641",
+#"Msisdn":"254708374149",
 "BillRefNumber":"17260" }
 
 response = requests.post(api_url, json = request, headers=headers)
